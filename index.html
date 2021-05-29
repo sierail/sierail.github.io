@@ -1,0 +1,402 @@
+<!doctype>
+<html>
+
+<head>
+
+	<!-- TRANSLATE: 'title' -->
+	<title>Pirilampos</title>
+    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=640">
+	<link rel="icon" type="image/png" href="favicon.png">
+
+	<!-- TRANSLATE: 'name' and 'description' -->
+	<meta itemprop="name" content="Pirilampos">
+	<meta itemprop="description" content="uma pequena simulação de pequenos pirilampos">
+	<meta itemprop="image" content="http://ncase.me/fireflies/social/thumbnail.png">
+
+	<!-- TRANSLATE: 'twitter:title' and 'twitter:description' -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@ncasenmare">
+	<meta name="twitter:title" content="Pirilampos">
+	<meta name="twitter:description" content="uma pequena simulação de pequenos pirilampos">
+	<meta name="twitter:creator" content="@ncasenmare">
+	<meta name="twitter:image" content="http://ncase.me/fireflies/social/thumbnail.png">
+
+	<!-- TRANSLATE: 'og:title' and 'og:description' -->
+	<meta property="og:title" content="Pirilampos">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://ncase.me/fireflies/">
+	<meta property="og:image" content="http://ncase.me/fireflies/social/thumbnail.png">
+	<meta property="og:description" content="uma pequena simulação de pequenos pirilampos">
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/widgets.css">
+
+</head>
+<body>
+
+<!-- The firefly simulation -->
+<div id="game"></div>
+
+<!-- The WORDS! -->
+<div id="words">
+<h1>&quot;Pirilampos&quot;</h1>
+
+<p>
+Como luzes de Natal a flutuar suavemente no ar,
+pirilampos acrescentam sempre um pouco de magia às florestas em que vivem.
+</p>
+
+<div style="overflow:hidden;">
+	<img src="ui/chaos.png" width="150" style="float: left;"/>
+	<div style="width: 185px; float: right;">
+		<span style="font-size:1.6em; line-height:1.1em;">CLICA E ARRASTA</span>
+		<br>
+		para criar algum
+		<br>
+		caos de pirilampos →
+	</div>
+</div>
+
+<p>
+Mas algumas espécies de pirilampos acrescentam ainda <em>mais</em> magia.
+No sudeste da Ásia, se fores até à margem do rio no meio da noite,
+serás presenteado com este impressionante show de luzes - cortesia do pirilampo da Tailândia:
+</p>
+
+<iframe width="350" height="197" src="https://www.youtube-nocookie.com/embed/ZGvtnE1Wy6U?rel=0&amp;start=64" frameborder="0" allowfullscreen></iframe>
+
+<p>
+Um manguezal inteiro a iluminar-se de uma vez só,
+mergulhando na escuridão, e então iluminando tudo outra vez - numa sincronia quase perfeita.
+Como é que milhares de pirilampos se coordenam uns com os outros?
+Quem é o maestro desta sinfonia silenciosa?
+</p>
+
+<p>
+Isto foi um mistério por quase um século e, em 1992,
+uma equipa de cientistas americanos decidiu resolvê-lo.
+Infelizmente, mas não surpreendentemente, a imprensa gozou com eles —
+<em>“O Governo queima os nossos impostos €€ para estudar pirilampos em Bornéu:
+Não é uma ideia brilhante!”</em> disse uma revista.
+Implacáveis, os cientistas seguiram em frente, câmaras e calculadoras nas mãos.
+</p>
+
+<p>
+Então, <em>como é que</em> milhares de pirilampos escolhem um líder para seguir,
+um maestro para manter os seus sinais luminosos em sincronia?
+A resposta, os cientistas descobriram, é simples:
+</p>
+
+<p>
+Eles não escolhem.
+</p>
+
+<p>
+Cada pirilampo tem o seu <em>próprio</em> relógio interno individual,
+e sempre que o relógio “bate as doze horas”, ele pisca.
+</p>
+
+<p>
+<img src="ui/clock.png" width="350"/>
+</p>
+
+<p>
+E em vez de sincronizar os seus relógios com um líder central,
+cada pirilampo faz o seguinte:
+</p>
+
+<p>
+Etapa 1: quando vê um sinal luminoso próximo de outro pirilampo,
+adianta um pouco o seu relógio.
+</p>
+
+<p>
+<img src="ui/nudge.png" width="350"/>
+</p>
+
+<p>
+Etapa 2: e é isso.
+</p>
+
+<p>
+Será que uma interação tão pequena e de curto alcance pode realmente fazer uma
+floresta inteira de pirilampos piscar numa harmonia sincrónica?
+Só há uma maneira de descobrir...
+</p>
+
+<hr/>
+
+	<!-- TRANSLATE: 'label', 'label-on', and 'label-off' -->
+	<widget type="toggle"
+		id="neighborNudgeRule"
+		background="#000" color="#fff"
+		background-on="#FEE27F" color-on="#000"
+
+		label="Encosta-te ao teu vizinho:<br>(clica para ligar&rarr;)"
+		label-on="ON" label-off="OFF">
+	</widget>
+
+<hr/>
+
+<p>
+Espera. Vê com atenção.
+</p>
+
+<p>
+O que é que vês?
+</p>
+
+<p>
+No início, não muito.
+Os pirilampos ainda parecem estar a piscar sem um padrão.
+</p>
+
+<p>
+Mas, depois de um tempo, vais notar pequenos grupos de pirilampos a piscarem juntos —
+mas esses grupos individuais ainda estão dessincronizados.
+</p>
+
+<p>
+Depois de um pouco mais de tempo, vais começar a ver pirilampos a fazer uma &quot;onda&quot;,
+como fãs empolgados nas bancadas durante um jogo de beisebol.
+</p>
+
+<p>
+Finalmente, todos, exceto alguns pirilampos, piscam juntos —
+e, eventualmente, até mesmo os atrasados juntam-se à dança coletiva.
+</p>
+
+<p>
+Há algo mais incrível do que isso? Se interromperes estes pirilampos causando algum caos...
+</p>
+
+<div style="overflow:hidden;">
+	<img src="ui/chaos.png" width="150" style="float: left;"/>
+	<div style="width: 185px; float: right;">
+		<span style="font-size:1.6em; line-height:1.1em;">CLICA E ARRASTA</span>
+		<br>
+		para confundir estes
+		<br>
+		pirilampos, outra vez →
+	</div>
+</div>
+
+<p>
+... sim, isso pode fazer com que eles se dividam por um momento, mas lenta e certamente,
+eles recompor-se-ão e brilharão como um.
+</p>
+
+<p>
+Aqui estão mais alguns botões e barras deslizantes que podes usar,
+para brincar com estes pirilampos virtuais:
+</p>
+
+<hr/>
+
+	<!-- TRANSLATE: 'label', 'label-min', and 'label-max' -->
+	<widget type="slider" id="numFireflies" background="#FEE27F" color="#fff" min="10" max="500" step="1" label="Número de pirilampos:" label-min="10" label-max="500">
+	</widget>
+
+	<!-- TRANSLATE: 'label', 'label-on', and 'label-off' -->
+	<widget type="toggle"
+		id="showClocks"
+		background="#000" color="#fff"
+		background-on="#FEE27F" color-on="#000"
+
+		label="Mostrar os relógios:"
+		label-on="ON" label-off="OFF">
+	</widget>
+
+	<!-- TRANSLATE: 'label', 'label-min', and 'label-max' -->
+	<widget type="slider"
+		id="clockSpeed"
+		background="#FEE27F" color="#fff"
+		min="0.2" max="2" step="0.05"
+
+		label="Velocidade do relógio dos pirilampos:"
+		label-min="devagar" label-max="depressa">
+	</widget>
+
+	<!-- TRANSLATE: 'label', 'label-on', and 'label-off' -->
+	<widget type="toggle"
+		id="neighborNudgeRule"
+		background="#000" color="#fff"
+		background-on="#FEE27F" color-on="#000"
+
+		label="Encosta-te ao teu vizinho:"
+		label-on="ON" label-off="OFF">
+	</widget>
+
+	<!-- TRANSLATE: 'label', 'label-min', and 'label-max' -->
+	<widget type="slider"
+		id="nudgeAmount"
+		background="#FEE27F" color="#fff"
+		min="0.01" max="0.10" step="0.001"
+
+		label="Quanto adiantar o relógio:"
+		label-min="um pouco" label-max="muito">
+	</widget>
+
+	<!-- TRANSLATE: 'label', 'label-min', and 'label-max' -->
+	<widget type="slider" id="neighborRadius" background="#FEE27F" color="#fff" min="50" max="500" step="10" label="O quão perto o vizinho deve estar:" label-min="próximo" label-max="longe">
+	</widget>
+
+	<!-- TRANSLATE: 'label' -->
+	<widget type="button"
+		id="resetFireflies"
+		background="#000" color="#fff"
+		background-hover="#FEE27F" color-hover="#000"
+
+		label="reiniciar os pirilampos">
+	</widget>
+
+	<!-- TRANSLATE: 'label' -->
+	<widget type="button"
+		id="resetEverything"
+		background="#000" color="#fff"
+		background-hover="#FEE27F" color-hover="#000"
+
+		label="reiniciar tudo">
+	</widget>
+
+<hr/>
+
+<p>
+E este é o segredo por trás do truque de magia dos nossos pirilampos:
+</p>
+
+<div style="overflow:hidden; text-align:center">
+<img src="ui/emergence.png" width="350" style="margin-bottom:25px"/>
+<div style="width:170px; float:left;">
+	<span style="font-size:33px; line-height:10px">interações em</span><br><span style="font-size:27px">pequena escala</span>
+</div>
+<div style="width:10px; float:left; position:relative; left:-5px; top:7px">→</div>
+<div style="width:170px; float:left;">
+	<span style="font-size:33px; line-height:10px">organização em</span><br><span style="font-size:27px">grande escala</span>
+</div>
+</div>
+
+<p>
+Acontece que os pirilampos não são as únicas coisas que
+se sincronizam de baixo para cima.
+Os teus neurónios criam ondas cerebrais.
+As células do pacemaker do teu coração disparam em sincronia.
+<a target="_blank" href="https://www.youtube.com/watch?v=5v5eBf2KwF8">
+Até mesmo um monte de metrónomos sem vida numa plataforma instável começarão a marchar juntos.</a>
+Além de tudo isso, entender a auto-sincronia ajudou-nos a construir melhores
+lasers, computadores e tecnologia de comunicação!
+</p>
+
+<p>
+E pensar que a matemática dos sistemas de auto-sincronização foi descoberta
+em parte por alguns cientistas que realmente amavam pirilampos.
+Parece que chamar o projeto deles de <em>“Não é uma Ideia Brilhante”</em> não foi uma ideia brilhante.
+</p>
+
+<p>
+. . .
+</p>
+
+<p>
+Tu flutuas em conjunto, suavemente, em silêncio,
+ocasionalmente pontuando a escuridão com um pequeno ponto de luz brilhante.
+Sozinho, não há muito para ver.
+</p>
+
+<p>
+Mas, sempre que brilhas, inspiras aqueles perto de ti a brilharem também,
+um pouco mais cedo do que eles brilhariam.
+E aqueles perto de ti, por sua vez, inspiram aqueles perto <em>deles</em>.
+</p>
+
+<p>
+E assim por diante.
+</p>
+
+<p>
+Primeiro, alguns pequenos grupos começam a piscar juntos.
+Depois, uma onda de luz varre o enxame.
+Finalmente, estão todos deslumbrantes juntos,
+um farol brilhante, todos em harmonia, em tandem — em sincronia.
+</p>
+
+<p>
+Que interação em pequena escala farás hoje, pequeno pirilampo?
+</p>
+
+<hr class="footer"/>
+
+<div id="credits">
+	<p>
+Inspirado no livro de Steven Strogatz,<br>
+	<a href="http://www.powells.com/book/sync-how-order-emerges-from-chaos-in-the-universe-nature-daily-life-9780786887217" target="_blank">
+	SYNC: How Order Emerges From Chaos In the Universe, Nature, and Daily Life
+	</a>
+	</p>
+
+	<p>
+	Criado por
+	<a href="http://ncase.me/" target="_blank">Nicky Case</a>,
+	com o amor e apoio dos meus colaboradores
+	<a href="credits" target="_blank">(vê todos aqui)</a>
+	</p>
+
+	<p>
+	“Pirilampos” é um código aberto, dedicado ao domínio público.
+	<a href="https://github.com/ncase/fireflies" target="_blank">(Obtém o código no Github!)</a>
+	</p>
+
+	<p>
+	<a href="https://www.patreon.com/ncase" target="_blank">
+		<span id="patreon">apoia-me no patreon &lt;3</span>
+	</a>
+	</p>
+
+	<p> </p>
+
+	<p>
+	
+	partilha com o teu enxame:<br>
+
+	<!-- TRANSLATE: 'text' -->
+	<sharing text="Pirilampos e o que eles nos podem ensinar sobre... bem, tudo. Uma simulação interativa:"
+			 link="http://ncase.me/fireflies/"></sharing>
+
+	</p>
+
+	<p style="margin-top:45px">
+
+traduções de fãs:<br>
+	<a href="http://ncase.me/fireflies-zh/">中文 (chinês)</a><br>
+	<a href="http://ncase.me/fireflies-pt-br/">português (português brasileiro)</a><br>
+	<a href="http://ncase.me/fireflies-fr/">français (francês)</a><br>
+	<a href="http://ncase.me/fireflies-de/">deutsch (alemão)</a><br>
+	<a href="http://ncase.me/fireflies-tr/">türkçe (turco)</a><br>
+	<a href="https://alxliv.github.io/fireflies/">pусский (russo)</a><br>
+	<a href="https://taleinat.github.io/fireflies/">עברית (hebraico)</a><br>
+	<a href="https://gepito.github.io/fireflies-hu/">magiar (húngaro)</a>
+
+	</p>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
+<!-- Library code -->
+<script src="js/pixi.min.js"></script>
+<script src="js/howler.js"></script>
+<script src="js/minpubsub.src.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/Mouse.js"></script>
+<script src="js/widgets.js"></script>
+<script src="js/sharing.js"></script>
+
+<!-- Main code -->
+<script src="js/index.js?v=2"></script>
